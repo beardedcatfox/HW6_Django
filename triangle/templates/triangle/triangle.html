@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Triangle Calculator</title>
+    <style>
+        body {
+            background-color: #606c71;
+        }
+
+        .triangle {
+            box-shadow: 2px 2px 10px #000;
+        }
+
+        .triangle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .triangle {
+            border-left: 300px solid transparent;
+            border-right: 300px solid transparent;
+            border-bottom: 350px solid lightgray;
+        }
+
+        input[type="number"] {
+            width: 150px;
+            height: 25px;
+            margin: 102px;
+            border-radius: 5px;
+            border: none;
+            text-align: center;
+        }
+
+        #sideA {
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translateY(-50%);
+        }
+
+        #sideB {
+             position: absolute;
+             top: 50%;
+             right: 20%;
+             transform: translateY(-50%);
+        }
+
+        #submit {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #hypotenuse {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translate(-116%, 400%);
+            background: lightgray;
+            box-shadow: 2px 2px 10px #000;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="triangle">
+        <form action="{% url 'triangle:triangle' %}" method="GET">
+            <input type="number" name="{{ form.legA.name }}" placeholder="Side A" id="sideA">
+            <br>
+            <input type="number" name="{{ form.legB.name }}" placeholder="Side B" id="sideB">
+            <input type="submit" value="Calculate" id="submit">
+        </form>
+        <input type="number" placeholder="Hypotenuse" name="hypotenuse" id="hypotenuse" value="{{ hipotenuse }}" disabled>
+    </div>
+  </body>
+</html>
